@@ -1,7 +1,6 @@
 
 package frc.robot.commands;
 import frc.robot.subsystems.DrivetrainSubsystem;
-import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.Timer;
@@ -20,30 +19,30 @@ public class DriveForwardByTime extends CommandBase {
     this.timer = new Timer();
     this.chassisSpeeds = new ChassisSpeeds(Constants.kAutoDriveSpeed, 0.0, 0.0);
 
-    addRequirements(drivetrain);
+    addRequirements(this.drivetrain);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    this.timer.reset();
-    this.timer.start();
+    timer.reset();
+    timer.start();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    this.drivetrain.drive(this.chassisSpeeds);
+    drivetrain.drive(chassisSpeeds);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    this.drivetrain.drive(new ChassisSpeeds(0.0, 0.0, 0.0));
+    drivetrain.drive(new ChassisSpeeds(0.0, 0.0, 0.0));
   }
 
   @Override
   public boolean isFinished() {
-    return this.timer.hasElapsed(this.command_duration);
+    return timer.hasElapsed(command_duration);
   }
 }
