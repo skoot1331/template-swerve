@@ -19,7 +19,7 @@ public class DriveForwardByTime extends CommandBase {
     this.timer = new Timer();
     this.chassisSpeeds = new ChassisSpeeds(Constants.kAutoDriveSpeed, 0.0, 0.0);
 
-    addRequirements(this.drivetrain);
+    addRequirements(drivetrain);
   }
 
   // Called when the command is initially scheduled.
