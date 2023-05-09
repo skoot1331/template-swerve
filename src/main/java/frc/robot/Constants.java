@@ -17,6 +17,10 @@ public final class Constants {
     public static final int kDriverControllerPort = 2;
     public static final int kOperatorControllerPort = 0;
   }
+
+  //public static final int kAutoDriveDistanceMeters = 10;
+  public static final int kAutotDriveSpeed = 15;
+  
   public static final double DRIVETRAIN_TRACKWIDTH_METERS = 0.559;
   public static final double DRIVETRAIN_WHEELBASE_METERS = 0.559;
 
